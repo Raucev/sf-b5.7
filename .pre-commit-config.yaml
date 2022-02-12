@@ -4,6 +4,7 @@ repos:
   hooks:
     - id: terraform_fmt
     - id: terraform_docs
+      args: ["markdown", "table", "--output-file", "README.md", "--output-mode, "inject", "./" ]
     - id: terraform_tflint
       args:
         - — '--args=--only=Terraform_deprecated_interpolation'
