@@ -4,7 +4,10 @@ repos:
   hooks:
     - id: terraform_fmt
     - id: terraform_docs
-      args: ["markdown", "table", "--output-file", "README.md", "--output-mode, "inject", "./" ]
+      args:
+       - --hook-config=--path-to-file=README.md        # Valid UNIX path. I.e. ../TFDOC.md or docs/README.md etc.
+       - --hook-config=--add-to-existing-file=true     # Boolean. true or false
+       - --hook-config=--create-file-if-not-exist=true # Boolean. true or false
     - id: terraform_tflint
       args:
         - — '--args=--only=Terraform_deprecated_interpolation'
